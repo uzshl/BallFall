@@ -5,7 +5,8 @@
 [ext_resource type="Script" uid="uid://cg4bl0xo8smni" path="res://scripts/trajectory.gd" id="3"]
 [ext_resource type="Texture2D" uid="uid://dgbsky0uuwqto" path="res://assets/ball.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://brjx8v7goniwu" path="res://assets/bg.png" id="5"]
-[ext_resource type="AudioStream" uid="uid://nic74ew5ur22" path="res://assets/jump.wav" id="6"]
+[ext_resource type="AudioStream" uid="uid://c5jggenu8jnlh" path="res://assets/fahh.mp3" id="6_kiw3p"]
+[ext_resource type="AudioStream" uid="uid://b76j0mi7w0xub" path="res://assets/song.wav" id="7_kiw3p"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(54, 54)
@@ -48,7 +49,10 @@ shape = SubResource("1")
 shape = SubResource("2")
 
 [node name="JumpSfx" type="AudioStreamPlayer" parent="Player" unique_id=1834321821]
-stream = ExtResource("6")
+stream = ExtResource("6_kiw3p")
+
+[node name="Fahh" type="AudioStreamPlayer" parent="Player" unique_id=1918889732]
+stream = ExtResource("6_kiw3p")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2107796972]
 position = Vector2(348, 360)
@@ -63,5 +67,10 @@ offset_bottom = 50.0
 theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
 theme_override_font_sizes/font_size = 24
 text = "Attempt: 1   |   0%"
+
+[node name="Song" type="AudioStreamPlayer" parent="." unique_id=1642994225]
+stream = ExtResource("7_kiw3p")
+autoplay = true
+playback_type = 1
 
 [connection signal="area_entered" from="Player/SpikeDetector" to="Player" method="_on_spike_detector_area_entered"]
